@@ -1,0 +1,21 @@
+body{
+  text-align: center;
+}
+
+.box{
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  text-align: cener;
+  margin:auto;
+  margin-bottom: 10px;
+}
+
+#yay{
+  width: 100px;
+  height: 100px;
+  background-color: green;
+  text-align: cener;
+  margin:auto;
+  margin-bottom: 10px;
+}

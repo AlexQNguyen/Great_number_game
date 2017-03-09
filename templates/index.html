@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Connected</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='mystyle3.css')}}">
+  </head>
+  <body>
+    <h1>Welcome to the Great Number Game!</h1>
+    <h4>I am th inking of a number between 1 and 100</h4>
+    <h4>Take a Guess!</h4>
+    {% if (session['guess'] == 102)%}
+    <p>
+      Come on take a guess!
+    </p>
+    {% else %}
+        {% if (session['guess']) > (session['secret_num'])%}
+        <div class='box'>
+          Too High
+        </div>
+        {% elif (session['guess']) < (session['secret_num'])%}
+        <div class="box">
+          Too Low
+        </div>
+        {% else %}
+        <h4 id='yay'>Correct!!!</h4>
+        {%endif%}
+    {%endif%}
+    <form action='/users' method='post'>
+      <input type='text' name='guess_num'>
+      <input type='submit' value='Submit'>
+   </form>
+   <form action='/reset' method='get'>
+      <input type='submit' value='reset'>
+   </form>
+   <p>
+     Check to see random number {{session['secret_num']}}
+   </p>
+  </body>
+</html>
